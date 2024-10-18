@@ -9,7 +9,7 @@ import (
 
 func TestEach(t *testing.T) {
 	var a *int
-	var f = func(v string) string { return v }
+	f := func(v string) string { return v }
 	var c0 chan int
 	c1 := make(chan int)
 

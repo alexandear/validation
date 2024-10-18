@@ -46,7 +46,6 @@ func Min(min interface{}) ThresholdRule {
 		operator:  greaterEqualThan,
 		err:       ErrMinGreaterEqualThanRequired,
 	}
-
 }
 
 // Max returns a validation rule that checks if a value is less or equal than the specified value.

@@ -16,7 +16,7 @@ linters:
     - "revive"
     - "goconst"
     - "unparam"
-    - "gofmt"
+    - "gofumpt"
 
 linters-settings:
   staticcheck:

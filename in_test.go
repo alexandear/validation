@@ -11,7 +11,7 @@ import (
 )
 
 func TestIn(t *testing.T) {
-	var v = 1
+	v := 1
 	var v2 *int
 	tests := []struct {
 		tag    string
@@ -38,7 +38,7 @@ func TestIn(t *testing.T) {
 }
 
 func TestIn_Generics(t *testing.T) {
-	var v = "a"
+	v := "a"
 	var v2 *string
 	tests := []struct {
 		tag    string

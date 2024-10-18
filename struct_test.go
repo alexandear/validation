@@ -178,7 +178,7 @@ func TestValidateStructWithContext(t *testing.T) {
 		assertError(t, test.err, err, test.tag)
 	}
 
-	//embedded struct
+	// embedded struct
 	err := ValidateWithContext(context.Background(), &m3)
 	if assert.NotNil(t, err) {
 		assert.Equal(t, "A: error abc.", err.Error())
