@@ -21,12 +21,12 @@ func TestDate(t *testing.T) {
 		{"t1", time.ANSIC, "", ""},
 		{"t2", time.ANSIC, "Wed Feb  4 21:00:57 2009", ""},
 		{"t3", time.ANSIC, "Wed Feb  29 21:00:57 2009", "must be a valid date"},
-		{"t4", "2006-01-02", "2009-11-12", ""},
-		{"t5", "2006-01-02", "2009-11-12 21:00:57", "must be a valid date"},
-		{"t6", "2006-01-02", "2009-1-12", "must be a valid date"},
-		{"t7", "2006-01-02", "2009-01-12", ""},
-		{"t8", "2006-01-02", "2009-01-32", "must be a valid date"},
-		{"t9", "2006-01-02", 1, "must be either a string or byte slice"},
+		{"t4", time.DateOnly, "2009-11-12", ""},
+		{"t5", time.DateOnly, "2009-11-12 21:00:57", "must be a valid date"},
+		{"t6", time.DateOnly, "2009-1-12", "must be a valid date"},
+		{"t7", time.DateOnly, "2009-01-12", ""},
+		{"t8", time.DateOnly, "2009-01-32", "must be a valid date"},
+		{"t9", time.DateOnly, 1, "must be either a string or byte slice"},
 	}
 
 	for _, test := range tests {
@@ -78,7 +78,7 @@ func TestDateRule_MinMax(t *testing.T) {
 	r = r.Max(time.Now())
 	assert.False(t, r.max.IsZero())
 
-	r2 := Date("2006-01-02").Min(time.Date(2000, 12, 1, 0, 0, 0, 0, time.UTC)).Max(time.Date(2020, 2, 1, 0, 0, 0, 0, time.UTC))
+	r2 := Date(time.DateOnly).Min(time.Date(2000, 12, 1, 0, 0, 0, 0, time.UTC)).Max(time.Date(2020, 2, 1, 0, 0, 0, 0, time.UTC))
 	assert.Nil(t, r2.Validate("2010-01-02"))
 	err := r2.Validate("1999-01-02")
 	if assert.NotNil(t, err) {

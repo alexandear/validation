@@ -28,7 +28,7 @@ type DateRule struct {
 //
 //	validation.Date(time.ANSIC)
 //	validation.Date("02 Jan 06 15:04 MST")
-//	validation.Date("2006-01-02")
+//	validation.Date(time.DateOnly)
 //
 // By calling Min() and/or Max(), you can let the Date rule to check if a parsed date value is within
 // the specified date range.
