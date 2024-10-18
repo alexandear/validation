@@ -578,7 +578,7 @@ group to validate both `FirstName` and `LastName`.
 While most validation rules are self-contained, some rules may depend dynamically on a context. A rule may implement the
 `validation.RuleWithContext` interface to support the so-called context-aware validation.
 
-To validate an arbitrary value with a context, call `validation.ValidateWithContext()`. The `context.Conext` parameter
+To validate an arbitrary value with a context, call `validation.ValidateWithContext()`. The `context.Context` parameter
 will be passed along to those rules that implement `validation.RuleWithContext`.
 
 To validate the fields of a struct with a context, call `validation.ValidateStructWithContext()`.
